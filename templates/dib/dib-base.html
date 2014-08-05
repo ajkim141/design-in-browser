@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="{{ url_for('static', filename='stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="{{ url_for('static', filename='stylesheets/ie.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <title> {% block title %}{% endblock %} - Design in Browser</title>
+    {% block dib_navbar_header %}{% endblock %}
+    {% block baseheader %}{% endblock %}
+        {# This always goes last!#}
+        <link href="{{ url_for('static', filename='stylesheets/dib-specific.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="dib-body-header-title">
+            {% block bodytitle %}{% endblock %}
+        </div>
+        <div id="dib-body-header-subtitle">
+            {% block bodysubtitle %}{% endblock %}
+        </div>
+        {% include "dib/dib-navbar.html" with context %}
+        {% block basebody %}{% endblock %}
+    </body>
+</html>
+

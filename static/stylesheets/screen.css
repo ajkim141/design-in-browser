@@ -70,10 +70,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 11, ../../sass/screen.sass */
 body {
   font: 100%;
-  color: #555544;
+  color: #030da7;
 }
 
-/* line 15, ../../sass/screen.sass */
-h1 {
+/* line 16, ../../sass/screen.sass */
+div#dib-body-header-title h1 {
+  font-size: 3em;
   text-align: center;
 }
