@@ -1,0 +1,17 @@
+{% macro render_contact_info(name, address, email, phone_number) -%}
+
+    <div class="contact-info">
+        <h1 id="name">{{ name }}</h1>
+        <h2 id="email-phone">{{ email }} - {{ phone_number }} </h2>
+        <h3 id="address">{{ address }}</h3>
+    </div>
+
+{%- endmacro %}
+
+{% macro render_widget(widg) -%}
+
+    <h1> Here's a widget! </h1>
+    {% include widg %}
+
+{%- endmacro %}
+

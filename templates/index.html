@@ -1,15 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-    <link href="{{ url_for('static', filename='stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="{{ url_for('static', filename='stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
-    <!--[if IE]>
-        <link href="{{ url_for('static', filename='stylesheets/ie.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    </head>
-    <body>
-        <h1> foo bar </h1>
-        <h2> baz </h2>
-    </body>
-</html>
+{% extends "base.html" %}
 
+{% block title %}Welcome{% endblock %}
+
+{% block basebody %}
+
+    <h1>Congrats, you've made it this far!</h1>
+
+{% endblock %}
