@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% import "layouts/contact_info.html" as c_info %}
+
+{% block title %}Will Martino's Resume{% endblock %}
+
+{% block basebody %}
+    {{ c_info.render_contact_info("Wxx Mxxxxxx", "xxx 1Xth", "xxxxx@gmail.com", "203xxxxxxx") }}
+
+    {% include "widgets/contact_info.html" %}
+
+    {% include "widgets/education_info.html" %}
+
+    {{ c_info.render_widget("widgets/contact_info.html") }}
+{% endblock %}
