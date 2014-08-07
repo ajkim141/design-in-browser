@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} Widgets Link Index {% endblock %}
+
+{% block basebody %}
+{% for wigdet in widgets %}
+    <div class="dbi-list widget-list">
+        <ol> </ol>
+        {{ wigdet }}
+    </div>
+{% endfor %}
+{% endblock %}
