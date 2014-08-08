@@ -48,10 +48,9 @@ def add_dib_structure(app):
             w.append({'name': template, 'path': os.path.join(k, template)})
         dib_tmp[k] = w
 
-        print(k, v, dib_tmp[k])
+        # print(k, v, dib_tmp[k])
         # TODO: when this loops, I get this garbage. need to figure out why... it causes the following to now work:
         #  {% for widget in widgets %} is missing contact_info...
-        # dib ['dib-base.html', 'dib-index.html', 'dib-pages-index.html'] [{'name': 'dib-base.html', 'path': 'dib/dib-base.html'}, {'name': 'dib-index.html', 'path': 'dib/dib-index.html'}, {'name': 'dib-pages-index.html', 'path': 'dib/dib-pages-index.html'}]
         # dib ['dib-navbar.html'] [{'name': 'dib-navbar.html', 'path': 'dib/dib-navbar.html'}]
         # dib ['dib-widget-index.html'] [{'name': 'dib-widget-index.html', 'path': 'dib/dib-widget-index.html'}]
         # layouts ['contact_info.html'] [{'name': 'contact_info.html', 'path': 'layouts/contact_info.html'}]

@@ -13,13 +13,13 @@
         <link href="{{ url_for('static', filename='stylesheets/dib-specific.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        {% include "dib/dib-navbar.html" with context %}
         <div id="dib-body-header-title">
             {% block bodytitle %}{% endblock %}
         </div>
         <div id="dib-body-header-subtitle">
             {% block bodysubtitle %}{% endblock %}
         </div>
-        {% include "dib/dib-navbar.html" with context %}
         {% block basebody %}{% endblock %}
     </body>
 </html>

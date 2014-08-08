@@ -1,18 +1,20 @@
 
-<nav id="dbi-nav-menu">
-    <ul>
-        <li><a href="{{ url_for('index') }}">Home</a> </li>
-        <li><a  href="{{ url_for('pages_index') }}">Pages</a>
-            <ul>
+<nav class="dib-nav-menu">
+    <ul class="dib-nav-menu">
+        <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('index') }}">Home</a> </li>
+        <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('pages_index') }}">Pages</a>
+            <ul class="dib-nav-menu dib-nav-menu-drop-down">
                 {% for page in dib_tmp.pages %}
-                    <li><a href="{{ url_for("page_render", page_name=page.name) }}">{{ page.name|safe }}</a></li>
+                    <li class="dib-nav-menu dib-nav-menu-drop-down">
+                        <a class="dib-nav-menu" href="{{ url_for("page_render", page_name=page.name) }}">{{ page.name|safe }}</a></li>
                 {% endfor %}
             </ul>
         </li>
-        <li><a href="{{ url_for('widgets_index') }}">Widgets</a>
-            <ul>
+        <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('widgets_index') }}">Widgets</a>
+            <ul class="dib-nav-menu dib-nav-menu-drop-down">
                 {% for widget in dib_tmp.widgets %}
-                    <li><a href="{{ url_for("widget_render", widget_name=widget.name) }}">{{ widget.name|safe }}</a></li>
+                    <li class="dib-nav-menu dib-nav-menu-drop-down">
+                        <a  class="dib-nav-menu" href="{{ url_for("widget_render", widget_name=widget.name) }}">{{ widget.name|safe }}</a></li>
                 {% endfor %}
             </ul>
         </li>
