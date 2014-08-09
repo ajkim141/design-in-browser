@@ -60,8 +60,6 @@ def add_dib_structure(app):
         # widgets/buttons ['simple.html'] [{'name': 'simple.html', 'path': 'widgets/buttons/simple.html'}]
     app.jinja_env.globals['dib_tmp'] = dib_tmp
 
-# This is my only line
-
 app = Flask(__name__)
 app.debug = True
 add_dib_structure(app)
