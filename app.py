@@ -65,7 +65,7 @@ def add_dib_structure(app):
 app = Flask(__name__)
 app.debug = True
 add_dib_structure(app)
-
+# new comment
 @app.route("/")
 def index():
     return render_template('dib/dib-index.html', )
