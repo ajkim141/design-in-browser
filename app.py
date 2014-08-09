@@ -76,6 +76,7 @@ def pages_index():
 
 @app.route('/pages/<page_name>')
 def page_render(page_name):
+    print("page_name: {}".format(page_name))
     return render_template('pages/{}'.format(page_name))
 
 
@@ -87,7 +88,6 @@ def widgets_index():
 @app.route('/widgets/<widget_name>')
 def widget_render(widget_name):
     return render_template('widgets/{}'.format(widget_name))
-
 
 
 if __name__ == "__main__":
