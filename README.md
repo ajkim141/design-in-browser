@@ -15,3 +15,4 @@ apt-get install ruby-dev
 gem install compass
 ```
 
+Verified for compass version 0.12.7
