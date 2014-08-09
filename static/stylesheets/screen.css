@@ -78,3 +78,9 @@ div#dib-body-header-title h1 {
   font-size: 3em;
   text-align: center;
 }
+
+/* line 20, ../../sass/screen.sass */
+div.contact-info h1.contact-info {
+  text-align: center;
+  font-size: 6em;
+}

@@ -1,7 +1,7 @@
 from operator import itemgetter
 from itertools import groupby
 from collections import OrderedDict
-import os
+import os, time
 from flask import Flask, render_template, g
 import subprocess
 import sys, os
@@ -42,23 +42,22 @@ def add_dib_structure(app):
     dib_tmp = OrderedDict()
     tmps = sorted([(folder, sorted([ template for _, template in templates]))
                    for folder, templates in groupby(loaded_templates, key=itemgetter(0))])
+
     for k, v in tmps:
         w = []
         for template in v:
             w.append({'name': template, 'path': os.path.join(k, template)})
-        dib_tmp[k] = w
 
-        # print(k, v, dib_tmp[k])
-        # TODO: when this loops, I get this garbage. need to figure out why... it causes the following to now work:
-        #  {% for widget in widgets %} is missing contact_info...
-        # dib ['dib-navbar.html'] [{'name': 'dib-navbar.html', 'path': 'dib/dib-navbar.html'}]
-        # dib ['dib-widget-index.html'] [{'name': 'dib-widget-index.html', 'path': 'dib/dib-widget-index.html'}]
-        # layouts ['contact_info.html'] [{'name': 'contact_info.html', 'path': 'layouts/contact_info.html'}]
-        # pages ['will_resume.html'] [{'name': 'will_resume.html', 'path': 'pages/will_resume.html'}]
-        # widgets ['contact_info.html'] [{'name': 'contact_info.html', 'path': 'widgets/contact_info.html'}]
-        # widgets ['education_info.html'] [{'name': 'education_info.html', 'path': 'widgets/education_info.html'}]
-        # widgets/buttons ['simple.html'] [{'name': 'simple.html', 'path': 'widgets/buttons/simple.html'}]
+        if k in dib_tmp.keys():
+            dib_tmp[k] += w
+        else:
+            dib_tmp[k] = w
+
     app.jinja_env.globals['dib_tmp'] = dib_tmp
+    for k, v in dib_tmp.items():
+        print("key: {}".format(k))
+        print(v)
+
 
 app = Flask(__name__)
 app.debug = True
