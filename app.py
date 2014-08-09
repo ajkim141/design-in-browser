@@ -6,7 +6,7 @@ from flask import Flask, render_template, g
 import subprocess
 import sys, os
 
-PWD = '/home/wjm/repos/design-in-browser'
+PWD = os.getcwd()
 TEMPLATE_DIR = os.path.join(PWD, "templates")
 
 # Utility Functions
