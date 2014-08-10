@@ -1,7 +1,7 @@
-{% macro create_dropdown(render_method, list_of_things) -%}
+{% macro _create_dropdown(render_method, list_of_things) -%}
     {% for thing in list_of_things %}
         <li class="dib-nav-menu dib-nav-menu-drop-down">
-            <a  class="dib-nav-menu" href="{{ url_for(render_method, name=thing.name) }}">{{ thing.name }}</a></li>
+            <a  class="dib-nav-menu" href="{{ url_for(render_method, name=thing.name) }}">{{ thing.name|safe }}</a></li>
     {% endfor %}
 {%- endmacro %}
 
@@ -11,15 +11,12 @@
         <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('index') }}">Home</a> </li>
         <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('pages_index') }}">Pages</a>
             <ul class="dib-nav-menu dib-nav-menu-drop-down">
-                {% for page in dib_tmp.pages %}
-                    <li class="dib-nav-menu dib-nav-menu-drop-down">
-                        <a class="dib-nav-menu" href="{{ url_for("page_render", page_name=page.name) }}">{{ page.name|safe }}</a></li>
-                {% endfor %}
+                {{ _create_dropdown("page_render", dib_tmp.pages) }}
             </ul>
         </li>
         <li class="dib-nav-menu"><a class="dib-nav-menu" href="{{ url_for('widgets_index') }}">Widgets</a>
             <ul class="dib-nav-menu dib-nav-menu-drop-down">
-                {{ create_dropdown("widget_render", dib_tmp.widgets) }}
+                {{ _create_dropdown("widget_render", dib_tmp.widgets) }}
             </ul>
         </li>
     </ul>
