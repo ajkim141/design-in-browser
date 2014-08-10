@@ -84,9 +84,10 @@ def widgets_index():
     return render_template('dib/dib-widget-index.html')
 
 
-@app.route('/widgets/<widget_name>')
-def widget_render(widget_name):
-    return render_template('widgets/{}'.format(widget_name))
+@app.route('/widgets/<name>')
+def widget_render(name):
+    print(name)
+    return render_template('widgets/{}'.format(name))
 
 
 if __name__ == "__main__":
