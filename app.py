@@ -54,9 +54,9 @@ def add_dib_structure(app):
             dib_tmp[k] = w
 
     app.jinja_env.globals['dib_tmp'] = dib_tmp
-    for k, v in dib_tmp.items():
-        print("key: {}".format(k))
-        print(v)
+    # for k, v in dib_tmp.items():
+    #     print("key: {}".format(k))
+    #     print(v)
 
 
 app = Flask(__name__)
@@ -73,10 +73,9 @@ def pages_index():
     return render_template('dib/dib-pages-index.html')
 
 
-@app.route('/pages/<page_name>')
-def page_render(page_name):
-    print("page_name: {}".format(page_name))
-    return render_template('pages/{}'.format(page_name))
+@app.route('/pages/<name>')
+def page_render(name):
+    return render_template('pages/{}'.format(name))
 
 
 @app.route('/widgets')
