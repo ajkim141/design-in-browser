@@ -1,12 +1,12 @@
-{% extends "base.html" %}
+{% extends "dib/dib-base.html" %}
 
 {% block title %} Pages Link Index {% endblock %}
 
 {% block basebody %}
     <div class="dbi-list widget-list">
         <ol>
-        {% for page in pages %}
-            <li><a href="{{ url_for('render_page', page_name=page) }}"></a> {{ page }}</li>
+        {% for page in dib_tmp.pages %}
+            <li><a href="{{ url_for('page_render', page_name=page.name) }}"></a> {{ page.name }}</li>
         {% endfor %}
         </ol>
     </div>

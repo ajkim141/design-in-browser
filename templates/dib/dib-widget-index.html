@@ -1,0 +1,12 @@
+{% extends "dib/dib-base.html" %}
+
+{% block title %} Widgets Link Index {% endblock %}
+
+{% block basebody %}
+{% for wigdet in dib_tmp.widgets %}
+    <div class="dbi-list widget-list">
+        <ol>{{ wigdet.name }}</ol>
+    </div>
+{% endfor %}
+    {{ dib_tmp|safe }}
+{% endblock %}
