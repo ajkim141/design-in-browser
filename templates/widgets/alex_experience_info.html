@@ -44,97 +44,62 @@
   }
 %}
 
+{%
+    set venice = {
+        'location': 'Venice Mobility Department, Venice, Italy',
+        'dates': 'October - December 2012',
+        'title': 'Researcher & Web Manager',
+        'bps': ['Collaborated with an interdisciplinary team to observe and analyze pedestrian traffic patterns within the city; presented findings to city officials.',
+        'Created and managed web pages with information on major city streets.',
+        'Established a foundation for future projects.'],
+        'citation': 'http://www.wpi.edu/Pubs/E-project/Available/E-project-121412-161950/'
+    }
+%}
 
+{%
+    set bracedr = {
+        'location': 'Bracedr, PC, Hamden, Connecticut',
+        'dates': 'May - August 2012',
+        'title': 'Software Developer',
+        'bps': ['Adapted an educational CD-I program into a comprehensive PowerPoint application.',
+        'Used to teach orthodontic patients about proper dental care while wearing braces.']
+    }
+%}
+
+{%
+    set crn = {
+        'location': 'CRN International, Hamden, CT',
+        'dates': 'May - August 2010',
+        'title': 'Information Technology Intern',
+        'bps': ['Assisted senior IT staff in performing software updates and maintenance.',
+        'Constructed new computers to company specifications.']
+    }
+%}
+
+
+{%
+    set ncc = {
+        'location': 'National Computer Camps, Fairfield, CT & Atlanta, GA',
+        'dates': 'June - July 2009 & 2011',
+        'title': 'Camp Counselor',
+        'bps': ['Set up computers before camper arrival.',
+        'Instructed campers in basic Java, C++, Multimedia Fusion 2 and 3D Game Studio.']
+    }
+%}
 <div class="ajk-resume ajk-resume-exp-all">
     
     <h2 class="ajk-resume-section-title">
         Experience
     </h2>
-
+    <br>
     {{ render_exp(osaka.location, osaka.dates, osaka.title, osaka.bps, osaka.citation) }}
+    <br>
+    {{ render_exp(venice.location, venice.dates, venice.title, venice.bps, venice.citation) }}
+    <br>
+    {{ render_exp(bracedr.location, bracedr.dates, bracedr.title, bracedr.bps) }}
+    <br>
+    {{ render_exp(crn.location, crn.dates, crn.title, crn.bps) }}
+    <br>
+    {{ render_exp(ncc.location, ncc.dates, ncc.title, ncc.bps) }}
 
 </div>
-{#    <p>#}
-{#        <u><br><br>#}
-{#            Osaka University, Osaka, Japan <br>#}
-{#        </u>#}
-{#        June - October 2013 <br>#}
-{#        Game Designer & Artist<br><br>#}
-{#    </p>#}
-{#        <ul>#}
-{#        <li>#}
-{#            Collaborated with four other students to create a mobile multiplayer application targeted for Android OS, intended for users to play on train commutes.#}
-{#        </li>#}
-{#        <li>#}
-{#            Lead the design and creation of two-dimensional art assets in Adobe Photoshop; authored the application specification report.#}
-{#        </li>#}
-{#        <li>#}
-{#            Assisted in application architecture and QA process.#}
-{#        </li>#}
-{#        <li>#}
-{#            Participated in the presentation (PowerPoint) and live demonstration of the application of Osaka University professors and graduate students.#}
-{#        </li>#}
-{#        <li>#}
-{#            Report, Presentation & Source available at: <a href="http://www.wpi.edu/Pubs/E-project/Available/E-project-110813-143928/">http://www.wpi.edu/Pubs/E-project/Available/E-project-110813-143928/</a>#}
-{#        </li>#}
-{#        </ul>#}
-{##}
-{#    <p>#}
-{#        <u><br><br>#}
-{#            Venice Mobility Department, Venice, Italy<br>#}
-{#        </u>#}
-{#        October - December 2012 <br>#}
-{#        Researcher & Web Manager<br><br>#}
-{#		</p>#}
-{#        <li>#}
-{#            Collaborated with an interdisciplinary team to observe and analyze pedestrian traffic patterns within the city; presented findings to city officials.#}
-{#        </li>#}
-{#        <li>#}
-{#            Created and managed web pages with information on major city streets.#}
-{#        </li>#}
-{#        <li>#}
-{#            Established a foundation for future projects.#}
-{#        </li>#}
-{#        <li>#}
-{#            Final Paper: <a href="http://www.wpi.edu/Pubs/E-project/Available/E-project-121412-161950/">http://www.wpi.edu/Pubs/E-project/Available/E-project-121412-161950/</a>#}
-{#        </li>#}
-{#		<p>#}
-{#        <u><br><br>#}
-{#            Bracedr, PC, Hamden, Connecticut<br>#}
-{#        </u>#}
-{#        May - August 2012<br>#}
-{#        Software Developer<br><br>#}
-{#		</p>#}
-{#        <li>#}
-{#            Adapted an educational CD-I program into a comprehensive PowerPoint application.#}
-{#        </li>#}
-{#        <li>#}
-{#            Used to teach orthodontic patients about proper dental care while wearing braces.#}
-{#        </li>#}
-{#		<p>#}
-{#        <u><br><br>#}
-{#            CRN International, Hamden, CT<br>#}
-{#        </u>#}
-{#        May - August 2010<br>#}
-{#        Information Technology Intern<br><br>#}
-{#		</p>#}
-{#        <li>#}
-{#            Assisted senior IT staff in performing software updates and maintenance.#}
-{#        </li>#}
-{#        <li>#}
-{#            Constructed new computers to company specifications.#}
-{#        </li>#}
-{#		<p>#}
-{#        <u><br><br>#}
-{#            National Computer Camps, Fairfield, CT, Atlanta, GA<br>#}
-{#        </u>#}
-{#        June - July 2009, 2011<br>#}
-{#        Camp Counselor<br><br>#}
-{#		</p>#}
-{#        <li>#}
-{#            Set up computers before camper arrival.#}
-{#        </li>#}
-{#        <li>#}
-{#            Instructed campers in basic Java, C++, Multimedia Fusion 2 and 3D Game Studio.#}
-{#        </li>#}
-{#</div>#}

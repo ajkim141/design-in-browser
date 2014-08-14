@@ -1,10 +1,35 @@
+{% macro render_edu(school, degree, gpa) -%}
 
-<div class="education-info">
-    
-    <hr>
-    <h2>Education</h2>
-    <p>Worcester Polytechnic Institute, Worcester, MA</p>
-    <p>Bachelor of Science in Interactive Media and Game Development, with Distinction	May 2014</p>
-    <p>GPA: 3.42</p>
+    <div class="ajk-resume ajk-resume-edu">
+        <p class="ajk-resume-header-scool">
+           {{ school }}
+        </p>
+        <p class="ajk-resume-header-degree">
+            {{ degree }}
+        </p>
+        <p class="ajk-resume-header-gpa">
+            GPA: {{ gpa }}
+        </p>
+    </div>
+
+
+{%- endmacro %}
+
+
+{%
+    set ajk = {
+        'school': 'Worcester Polytechnic Institute, Worcester, MA',
+        'degree': 'Bachelor of Science in Interactive Media and Game Development, with Distinction	May 2014',
+        'gpa': '3.42'
+    }
+%}
+
+<div class="ajk-resume ajk-resume-edu-all">
+
+    <h2 class="ajk-resume-section-title">
+        Education
+    </h2>
+    <br>
+    {{ render_edu(ajk.school, ajk.degree, ajk.gpa) }}
 
 </div>

@@ -1,4 +1,48 @@
 
+{% macro render_tskills(bps) -%}
+
+    <div class="ajk-resume ajk-resume-tskills-body">
+        <ul class="ajk-resume-tskills-body-list">
+            {% for bp in bps %}
+                <li class="ajk-resume-tskills-body-list-element">
+                    {{ bp }}
+                </li>
+            {% endfor %}
+            {% if citation %}
+                <li class="ajk-resume-tskills-body-list-element">
+                    <a href="{{ citation }}">Citation</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+
+
+{%- endmacro %}
+
+{%
+    set ajk = {
+        'bps': ['3D Design: Maya, 3DS Max, Zbrush',
+        'Visual Design: GIMP, Photoshop',
+        'Interactive Design: Flash',
+        'Audio Design: Audacity, Reaper',
+        'Game Engines: Neverwinter Nights 2 Editor Unity, Unreal 3',
+        'Hardware: Desktop Computer Assembly',
+        'Microsoft Office: Excel, PowerPoint, Word']
+    }
+%}
+
+
+<div class="ajk-resume ajk-resume-tskills-all">
+
+    <h2 class="ajk-resume-section-title">
+        Technical Skills
+    </h2>
+    <br>
+    {{ render_tskills(ajk.bps) }}
+
+</div>
+
+<!--
 <div class="technical-skills">
 
     <hr>
@@ -30,3 +74,4 @@
     </ul>
 
 </div>
+-->
